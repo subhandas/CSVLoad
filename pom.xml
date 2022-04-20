@@ -6,9 +6,12 @@
   <artifactId>LoadFile</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
+  
+  
 
   <name>LoadFile</name>
   <url>http://maven.apache.org</url>
+  
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -42,4 +45,28 @@
    </dependency>
     
   </dependencies>
+  <build>
+  <plugins>
+    <plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <executions>
+        <execution>
+            <goals>
+                <goal>repackage</goal>
+            </goals>
+            <configuration>
+                <classifier>spring-boot</classifier>
+                <mainClass>
+                  db.postgres.copy.LoadFile.PostgreSQLJDBC
+                </mainClass>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+</plugins>
+</build>
+  
+  
+  
 </project>

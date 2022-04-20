@@ -11,9 +11,11 @@ public class PostgreSQLJDBC {
 
    public static void main(String[] args) {
 		try {
-
+            //String fpath = args[0];
+            //String tbname = args[1];
+            
 			CSVLoader loader = new CSVLoader(getConnection());
-			loader.loadCSV("C://Users/ABSD491/Desktop/Projects/Card Tokenization/200records_Atmrep.csv", "atmrep", false);
+			loader.loadCSV("/upload-volume/Sparrow/file/200records_Atmrep.csv", "atmrep", true);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
